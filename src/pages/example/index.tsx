@@ -1,6 +1,7 @@
+import CodeEditor from '@/components/CodeEditor';
 import React from 'react';
 const Example = () => {
-    return <></>;
+    return <CodeEditor></CodeEditor>;
 };
 
 export default Example;

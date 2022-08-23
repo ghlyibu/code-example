@@ -1,7 +1,8 @@
 import React from 'react';
+import Example from './pages/example';
 
 function App() {
-    return <div className="App">111</div>;
+    return <Example />;
 }
 
 export default App;
