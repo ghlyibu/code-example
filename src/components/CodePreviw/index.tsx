@@ -21,8 +21,8 @@ const CodePreviw:React.FunctionComponent<PropsType> = (props:PropsType) => {
         }
         iframe.current = document.createElement('iframe');
         iframe.current.setAttribute('style','');
-        const {doc=''} = editor.current?.state||{};
-        iframe.current.contentWindow?.document.write(doc as unknown as string);
+        const {doc} = editor.current?.state||{};
+        iframe.current.contentWindow?.document.write(doc?.toString()||'');
     },[]);
 
     const refresh = useCallback(()=>{
