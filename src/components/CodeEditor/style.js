@@ -7,4 +7,7 @@ export const Container = styled.div.attrs((props)=>{
 })`
     height: ${({height})=> height||'100%'};
     width: ${({width})=> width||'100%'};
+    .cm-editor {
+        height: 100%;
+    }
 `;

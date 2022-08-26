@@ -1,7 +1,7 @@
-import CodeEditor from '@/components/CodeEditor';
+import CodePreviw from '@/components/CodePreviw';
 import React from 'react';
 const Example = () => {
-    return <CodeEditor></CodeEditor>;
+    return <CodePreviw></CodePreviw>;
 };
 
 export default Example;

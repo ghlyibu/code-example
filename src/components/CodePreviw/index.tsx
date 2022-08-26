@@ -1,11 +1,11 @@
 import { EditorView } from 'codemirror';
 import React, { useCallback, useEffect, useRef } from 'react';
 import CodeEditor from '../CodeEditor';
-import { Container, EditorWrapper,PreviwWrapper } from './style';
+import { Container, EditorWrapper,PreviwWrapper, RunButton } from './style';
 
 
 export interface PropsType {
-    doc: string
+    doc?: string
 }
 
 const CodePreviw:React.FunctionComponent<PropsType> = (props:PropsType) => {
@@ -22,6 +22,7 @@ const CodePreviw:React.FunctionComponent<PropsType> = (props:PropsType) => {
         iframe.current = document.createElement('iframe');
         iframe.current.setAttribute('style','');
         const {doc} = editor.current?.state||{};
+        preview.current?.appendChild(iframe.current);
         iframe.current.contentWindow?.document.write(doc?.toString()||'');
     },[]);
 
@@ -31,6 +32,9 @@ const CodePreviw:React.FunctionComponent<PropsType> = (props:PropsType) => {
     return <Container>
         <EditorWrapper >
             <CodeEditor handleRef={handlerEditor} />
+            <RunButton onClick={()=>{
+                run();
+            }} />
         </EditorWrapper>
         <PreviwWrapper ref={preview}>
             
